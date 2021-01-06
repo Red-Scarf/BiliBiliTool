@@ -63,15 +63,11 @@ namespace Ray.BiliBiliTool.Application
             AddCoinsForVideo();
             MangaSign();
             LiveSign();
-            // 不将银瓜子换成硬币
-            // userInfo.Money = ExchangeSilver2Coin();
-            _logger.LogInformation("-----不将银瓜子换成硬币-----\r\n");
+            userInfo.Money = ExchangeSilver2Coin();
 
             ReceiveVipPrivilege(userInfo);
             ReceiveMangaVipReward(userInfo);
-            // 不给自己充电
-            //Charge(userInfo);
-            _logger.LogInformation("-----不给自己充电-----\r\n");
+            Charge(userInfo);
 
             _logger.LogInformation("-----全部任务已执行结束-----\r\n");
         }
